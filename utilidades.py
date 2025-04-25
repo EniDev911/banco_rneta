@@ -1,4 +1,5 @@
 ANCHO = 40
+import os
 
 def encabezado(titulo, emoji=""):
     Y = "+" + ("=" * ANCHO) + "+"
@@ -9,3 +10,9 @@ def encabezado(titulo, emoji=""):
         X = "|" + titulo.upper().center(ANCHO) + "|"
                              
     return "\n".join([Y,X,Y])
+
+def limpiar_pantalla():
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
